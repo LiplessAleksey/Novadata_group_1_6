@@ -2,5 +2,5 @@
 Data Engineering Internship from Novadata, Summer Stream.  
 ФИО: Безгубов Алексей Васильевич  
 Работаю в отделе RUN (сопровождение IT систем)  
-![Фото](images/Фото.jpg)
+![Фото](images/фото.jpg)
 Материал понятен 😊  
