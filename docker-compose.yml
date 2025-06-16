@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  postgres:
+    build:
+      context: ./postgres
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: example_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    command: >
+      postgres -c shared_preload_libraries=pg_cron
+               -c cron.database_name=example_db
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse_db
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    volumes:
+      - ./clickhouse_user.xml:/etc/clickhouse-server/users.d/default-user.xml
+      - clickhouse_data:/var/lib/clickhouse
+
+  mongo:
+    image: mongo:6
+    container_name: mongo_db
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  pgdata:
+  clickhouse_data:
+  mongodb_data:
