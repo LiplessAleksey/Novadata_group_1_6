@@ -70,7 +70,7 @@ $$ LANGUAGE plpgsql;
 
 SELECT cron.schedule(
   'daily_audit_export',
-  '40 20 * * *',
+  '0 03 * * *',
   $$SELECT export_today_audit_log();$$
 );
 
