@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   postgres:
     build:
@@ -21,6 +19,7 @@ services:
   clickhouse:
     image: clickhouse/clickhouse-server:latest
     container_name: clickhouse_db
+    restart: always
     ports:
       - "8123:8123"
       - "9000:9000"
@@ -28,8 +27,11 @@ services:
       nofile:
         soft: 262144
         hard: 262144
+    environment:
+      CLICKHOUSE_USER: user
+      CLICKHOUSE_PASSWORD: strongpassword
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
     volumes:
-      - ./clickhouse_user.xml:/etc/clickhouse-server/users.d/default-user.xml
       - clickhouse_data:/var/lib/clickhouse
 
   mongo:
