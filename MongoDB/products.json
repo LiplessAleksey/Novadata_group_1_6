@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Château Margaux 2015",
+    "type": "wine",
+    "vintage": 2015,
+    "region": "Bordeaux",
+    "grape": ["Cabernet Sauvignon", "Merlot"],
+    "rating": { "sommelier": 4.8, "users": [5, 5, 4, 5] },
+    "price": 199.99,
+    "country": "France",
+    "available": true
+  },
+  {
+    "name": "Guinness Draught",
+    "type": "beer",
+    "volume": 0.44,
+    "abv": 4.2,
+    "tags": ["stout", "dark"],
+    "price": 2.49,
+    "country": "Ireland",
+    "available": true
+  },
+  {
+    "name": "Johnnie Walker Black Label",
+    "type": "whisky",
+    "age": 12,
+    "abv": 40,
+    "price": 32.00,
+    "country": "Scotland",
+    "available": true
+  },
+  {
+    "name": "Craft IPA 7 Hops",
+    "type": "beer",
+    "volume": 0.5,
+    "abv": 6.5,
+    "tags": ["ipa", "hoppy", "bitter"],
+    "price": 3.99,
+    "country": "USA",
+    "available": false
+  },
+  {
+    "name": "Barolo Riserva",
+    "type": "wine",
+    "vintage": 2016,
+    "region": "Piedmont",
+    "grape": ["Nebbiolo"],
+    "rating": { "sommelier": 4.6 },
+    "price": 49.99,
+    "country": "Italy",
+    "available": true
+  }
+]
